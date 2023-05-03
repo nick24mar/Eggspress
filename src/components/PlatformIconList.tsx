@@ -14,11 +14,11 @@ import { HStack, Icon } from "@chakra-ui/react";
 import { Platform } from "../hooks/useGames";
 import { IconType } from "react-icons";
 
-interface Prop {
+interface Props {
   platforms: Platform[];
 }
 
-function PlatformIconList({ platforms }: Prop) {
+function PlatformIconList({ platforms }: Props) {
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
     playstation: FaPlaystation,
