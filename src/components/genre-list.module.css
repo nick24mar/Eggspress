@@ -1,0 +1,3 @@
+.genreItem:hover {
+  background-color: var(--chakra-colors-whiteAlpha-50);
+}
