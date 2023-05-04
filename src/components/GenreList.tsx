@@ -2,8 +2,6 @@ import { Flex, Image, List, ListItem, Spinner, Button } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 
-import style from "./genre-list.module.css";
-
 interface Props {
   onSelectGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
@@ -24,7 +22,7 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
           backgroundColor={
             genre.id === selectedGenre?.id ? "whiteAlpha.50" : ""
           }
-          className={style.genreItem}
+          className="genre-item"
           p={2}
           mb={2}
           borderRadius={8}
