@@ -4,3 +4,7 @@
 .genre-item:hover {
   background-color: var(--chakra-colors-whiteAlpha-50);
 }
+
+form {
+  width: 100%;
+}

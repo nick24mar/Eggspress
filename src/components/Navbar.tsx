@@ -3,11 +3,15 @@ import logo from "../assets/logo.webp";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-function Navbar() {
+interface Props {
+  onSearch: (search: string) => void;
+}
+
+function Navbar({ onSearch }: Props) {
   return (
     <Flex alignItems="center" px={4} py={3} gap={5}>
       <Image src={logo} boxSize="60px" />
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </Flex>
   );
