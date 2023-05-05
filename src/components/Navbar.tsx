@@ -10,7 +10,7 @@ interface Props {
 function Navbar({ onSearch }: Props) {
   return (
     <Flex alignItems="center" px={4} py={3} gap={5}>
-      <Image src={logo} boxSize="60px" />
+      <Image src={logo} boxSize="60px" borderRadius={100} />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </Flex>

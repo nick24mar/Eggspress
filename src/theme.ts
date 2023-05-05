@@ -6,6 +6,9 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  fonts: {
+    heading: `'Alata', sans-serif`,
+  },
   colors: {
     gray: {
       50: "#f8f0f2",
