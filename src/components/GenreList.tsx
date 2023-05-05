@@ -1,4 +1,12 @@
-import { Flex, Image, List, ListItem, Spinner, Button } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  List,
+  ListItem,
+  Spinner,
+  Button,
+  Heading,
+} from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 
@@ -15,32 +23,42 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
   if (isLoading) return <Spinner />;
 
   return (
-    <List>
-      {data.map((genre) => (
-        <ListItem
-          key={genre.id}
-          backgroundColor={
-            genre.id === selectedGenre?.id ? "whiteAlpha.50" : ""
-          }
-          className="genre-item"
-          p={2}
-          mb={2}
-          borderRadius={8}
-        >
-          <Flex gap={2}>
-            <Image
-              boxSize="32px"
-              borderRadius={8}
-              objectFit="cover"
-              src={getCroppedImageUrl(genre.image_background)}
-            />
-            <Button variant="link" onClick={() => onSelectGenre(genre)}>
-              {genre.name}
-            </Button>
-          </Flex>
-        </ListItem>
-      ))}
-    </List>
+    <>
+      <Heading fontSize="2xl" mb={3} px={2}>
+        Genres
+      </Heading>
+      <List>
+        {data.map((genre) => (
+          <ListItem
+            key={genre.id}
+            backgroundColor={
+              genre.id === selectedGenre?.id ? "whiteAlpha.50" : ""
+            }
+            className="genre-item"
+            p={2}
+            mb={2}
+            borderRadius={8}
+          >
+            <Flex gap={2}>
+              <Image
+                boxSize="32px"
+                borderRadius={8}
+                objectFit="cover"
+                src={getCroppedImageUrl(genre.image_background)}
+              />
+              <Button
+                variant="link"
+                whiteSpace="normal"
+                textAlign="left"
+                onClick={() => onSelectGenre(genre)}
+              >
+                {genre.name}
+              </Button>
+            </Flex>
+          </ListItem>
+        ))}
+      </List>
+    </>
   );
 }
 
