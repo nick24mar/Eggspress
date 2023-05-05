@@ -23,6 +23,7 @@ function GameGrid({ gameQuery }: Props) {
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
+        {data.length === 0 ? "There are no games yet for this platform" : ""}
         {data.map((game) => (
           <GameCardContainer key={game.id}>
             <GameCard game={game} />
