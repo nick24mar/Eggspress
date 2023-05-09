@@ -12,14 +12,14 @@ const useData = <T>(
   requestConfig?: AxiosRequestConfig,
   deps?: any[]
 ) => {
-  const controller = new AbortController();
-
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(false);
 
   useEffect(
     () => {
+      const controller = new AbortController();
+
       setLoading(true);
       apiClient
         .get<FetchResponse<T>>(endpoint, {
