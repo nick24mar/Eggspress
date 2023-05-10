@@ -12,10 +12,10 @@ import getCroppedImageUrl from "../services/image-url";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-function GenreList({ onSelectGenre, selectedGenre }: Props) {
+function GenreList({ onSelectGenre, selectedGenreId }: Props) {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -32,7 +32,7 @@ function GenreList({ onSelectGenre, selectedGenre }: Props) {
           <ListItem
             key={genre.id}
             backgroundColor={
-              genre.id === selectedGenre?.id ? "whiteAlpha.50" : ""
+              genre.id === selectedGenreId ? "whiteAlpha.50" : ""
             }
             className="genre-item"
             p={2}
