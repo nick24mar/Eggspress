@@ -18,12 +18,12 @@ function Homepage() {
       }}
     >
       <Show above="lg">
-        <GridItem area="aside" p={6}>
+        <GridItem area="aside">
           <GenreList />
         </GridItem>
       </Show>
 
-      <GridItem area="main" p={6}>
+      <GridItem area="main" px={3}>
         <GameHeading />
         <Flex gap={4} my={6}>
           <PlatformSelector />
