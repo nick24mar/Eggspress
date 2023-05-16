@@ -8,7 +8,12 @@ function Navbar() {
   return (
     <Flex alignItems="center" px={4} py={3} gap={5}>
       <Link to="/">
-        <Image src={logo} boxSize="60px" borderRadius={100} objectFit="cover" />
+        <Image
+          src={logo}
+          boxSize="60px"
+          borderRadius={100}
+          objectFit="scale-down"
+        />
       </Link>
       <SearchInput />
       <ColorModeSwitch />
